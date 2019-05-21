@@ -1,0 +1,30 @@
+{
+  "name": "node-ise",
+  "version": "1.0.0",
+  "description": "Simple functions to leverage the Cisco ISE API.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rnwolfe/node-ise.git"
+  },
+  "keywords": [
+    "cisco",
+    "ise",
+    "cisco",
+    "ise"
+  ],
+  "author": "Ryan Wolfe",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/rnwolfe/node-ise/issues"
+  },
+  "homepage": "https://github.com/rnwolfe/node-ise#readme",
+  "dependencies": {
+    "axios": "^0.18.0",
+    "objects-to-csv": "^1.2.1",
+    "querystring": "^0.2.0"
+  }
+}
