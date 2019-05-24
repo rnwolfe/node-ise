@@ -6,18 +6,6 @@ let policySet = {};
 ise
   .iseLogin()
   .then(() => ise.getRadiusPolicySetByName('HRN1 Fabric Policy'))
-  .then(policySet =>
-    Promise.all([
-      ise.getAuthenticationPolicy(policySet.id),
-      ise.getAuthorizationPolicy(policySet.id)
-    ])
-  )
-  .then(promises => {
-    const authcPolicy = promises[0];
-    const authzPolicy = promises[1];
-    console.log('AUTHC POLICY');
-    console.dir(authcPolicy);
-    console.log('AUTHZ POLICY');
-    console.dir(authzPolicy);
-  })
+  .then(policySet => ise.resolveRadiusPolicySet(policySet.id))
+  .then(policy => console.dir(policy))
   .catch(error => console.dir(error));
