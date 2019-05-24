@@ -4,5 +4,6 @@ const ise = new ISE(process.env.ISE_HOST, process.env.ISE_USER, process.env.ISE_
 
 ise
   .iseLogin()
-  .then(() => console.log('logged in!'))
+  .then(() => ise.getEndpoints({ IdentityGroup: 'BlackBerry' }))
+  .then(endpoints => endpoints.forEach(e => console.log(e.MACAddress)))
   .catch(error => console.dir(error));

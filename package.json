@@ -24,6 +24,7 @@
   "homepage": "https://github.com/rnwolfe/node-ise#readme",
   "dependencies": {
     "axios": "^0.18.0",
+    "extract-zip": "^1.6.7",
     "objects-to-csv": "^1.2.1",
     "querystring": "^0.2.0"
   }
