@@ -1,2 +1,15 @@
+# Node.js
 node_modules/
+.env
+
+# VSCode
+.vscode/
+
+# Working files
+*.curl
 *.csv
+examples/certs
+
+# macOS
+.DS_Store
+
