@@ -8,7 +8,7 @@ ise
     Promise.all([
       ise.getVulnerabilityData(),
       ise.getTotalVulnerableEndpoints(),
-      ise.getVulnerableEndpointOverTime('6months')
+      ise.getVulnerableEndpointsOverTime('6months')
     ])
   )
   .then(values => console.dir(values));
