@@ -9,6 +9,7 @@ node_modules/
 *.curl
 *.csv
 examples/certs
+examples/*.fish
 
 # macOS
 .DS_Store
