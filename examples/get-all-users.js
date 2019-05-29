@@ -6,4 +6,6 @@ ise
   .iseLogin()
   .then(() => ise.getUsers())
   .then(users => console.dir(users))
+  .then(() => ise.logout())
+  .then(() => console.log('Successfully logged out!'))
   .catch(error => console.dir(error));
