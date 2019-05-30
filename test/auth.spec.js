@@ -10,10 +10,6 @@ describe('ISE Authentication:', () => {
       const login = await tempIse.login();
       login.should.contain.keys(['sessionId', 'csrfToken']);
     });
-    it('should logout successfully', async () => {
-      const logout = await tempIse.logout();
-      logout.should.be.true;
-    });
     it('should fail to login', async () => {
       const bad = new ISE(ise.host, 'badtest', 'badtest');
       bad
@@ -22,6 +18,12 @@ describe('ISE Authentication:', () => {
           Error,
           /Authentication failed. Bad username or password./
         );
+    });
+  });
+  describe('Logout:', () => {
+    it('should logout successfully', async () => {
+      const logout = await tempIse.logout();
+      logout.should.be.true;
     });
   });
 });
