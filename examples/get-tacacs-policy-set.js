@@ -5,7 +5,7 @@ const ise = new ISE(process.env.ISE_HOST, process.env.ISE_USER, process.env.ISE_
 let policySet = {};
 ise
   .login()
-  .then(() => ise.getTacacsPolicySetByName('Switches'))
+  .then(() => ise.getTacacsPolicySetByName('Default'))
   .then(policySet => ise.resolveTacacsPolicySet(policySet.id))
   .then(policy => console.dir(policy))
   .catch(error => console.dir(error));

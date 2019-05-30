@@ -5,7 +5,7 @@ const ise = new ISE(process.env.ISE_HOST, process.env.ISE_USER, process.env.ISE_
 let policySet = {};
 ise
   .login()
-  .then(() => ise.getRadiusPolicySetByName('HRN1 Fabric Policy'))
+  .then(() => ise.getRadiusPolicySetByName('Default'))
   .then(policySet => ise.resolveRadiusPolicySet(policySet.id))
   .then(policy => console.dir(policy))
   .catch(error => console.dir(error));
