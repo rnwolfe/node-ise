@@ -21,3 +21,11 @@ if ((process.env.TEST_MODE || '').trim() === 'live') {
 
 global.BASEURL = `https://${ise.host}/admin`;
 global.ROOT = '/';
+
+before('Login to ISE', async () => {
+  return await ise.login();
+});
+
+after('Logout of ISE', async () => {
+  return await ise.logout();
+});

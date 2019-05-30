@@ -3,14 +3,6 @@ require('./setup');
 
 if (!LIVE_TEST) require('./mocks/metrics.nock');
 
-before('Login to ISE', async () => {
-  return await ise.login();
-});
-
-after('Logout of ISE', async () => {
-  return await ise.logout();
-});
-
 describe('ISE Dashboards:', () => {
   describe('System Alarms:', () => {
     it('should get system alarms', async () => {
