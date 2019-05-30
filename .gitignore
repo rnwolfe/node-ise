@@ -11,6 +11,10 @@ node_modules/
 examples/certs
 examples/*.fish
 
+# Tests / coverage
+test/fixtures
+.nyc_output/
+
 # macOS
 .DS_Store
 
