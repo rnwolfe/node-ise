@@ -2,6 +2,8 @@
 require('./setup');
 // if (!LIVE_TEST) require('./mocks/endpoints.nock');
 
+const USER_KEYS = ['userName', 'NoOfDevicesPerUser'];
+
 describe('User:', () => {
   describe('Get users:', () => {
     it('should get all users (no pagination)', async () => {
@@ -11,7 +13,7 @@ describe('User:', () => {
         .with.lengthOf.at.least(2);
       expect(users[0])
         .to.be.an('object')
-        .that.includes.keys(['userName', 'NoOfDevicesPerUser']);
+        .that.includes.keys(USER_KEYS);
     });
     it('should get all users (with pagination)', async () => {
       const users = await ise.getUsers({}, { pageSize: 1 });
@@ -29,7 +31,7 @@ describe('User:', () => {
       const users = await ise.getUser('host/win10-3.ngn.lab');
       expect(users)
         .to.be.an('object')
-        .that.includes.keys(['userName', 'NoOfDevicesPerUser']);
+        .that.includes.keys(USER_KEYS);
     });
   });
 });
