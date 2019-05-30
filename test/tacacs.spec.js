@@ -1,7 +1,7 @@
 'use strict';
 require('./setup');
 
-// if (!LIVE_TEST) require('./mocks/radius.nock');
+// if (!LIVE_TEST) require('./mocks/tacacs.nock');
 const POLICY_SET_KEYS = [
   'id',
   'state',
