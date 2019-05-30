@@ -14,6 +14,7 @@ examples/*.fish
 # Tests / coverage
 test/fixtures
 .nyc_output/
+coverage/
 
 # macOS
 .DS_Store
