@@ -12,7 +12,7 @@ describe('User:', () => {
         .with.lengthOf.at.least(2);
       expect(users[0])
         .to.be.an('object')
-        .that.includes.keys(['username', 'NoOfDevicesPerUser']);
+        .that.includes.keys(['userName', 'NoOfDevicesPerUser']);
     });
     it('should get all users (with pagination)', async () => {
       const users = await ise.getUsers({}, { pageSize: 1 });
@@ -25,6 +25,12 @@ describe('User:', () => {
       expect(users)
         .to.be.an('array')
         .with.a.lengthOf.at.least(1);
+    });
+    it('should get a single user', async () => {
+      const users = await ise.getUser('host/win10-3.ngn.lab');
+      expect(users)
+        .to.be.an('object')
+        .that.includes.keys(['userName', 'NoOfDevicesPerUser']);
     });
   });
 });
