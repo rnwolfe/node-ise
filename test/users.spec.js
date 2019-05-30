@@ -1,6 +1,5 @@
 'use strict';
 require('./setup');
-const fs = require('fs');
 // if (!LIVE_TEST) require('./mocks/endpoints.nock');
 
 describe('User:', () => {
