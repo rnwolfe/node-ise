@@ -6,7 +6,8 @@
   "scripts": {
     "test": "./node_modules/mocha/bin/mocha",
     "test:live": "TEST_MODE=live ./node_modules/mocha/bin/mocha",
-    "coverage": "nyc ./node_modules/mocha/bin/mocha"
+    "coverage": "nyc ./node_modules/mocha/bin/mocha",
+    "coverage:live": "TEST_MODE=live nyc ./node_modules/mocha/bin/mocha"
   },
   "repository": {
     "type": "git",
