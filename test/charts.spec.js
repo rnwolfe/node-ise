@@ -40,4 +40,8 @@ describe('ISE Chart Data:', () => {
     const data = await ise.getDeviceTypeChartData();
     expect(data).to.be.an('object');
   });
+  it('should get application category data', async () => {
+    const data = await ise.getApplicationCategoryChartData();
+    expect(data).to.be.an('object');
+  });
 });
