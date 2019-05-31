@@ -37,7 +37,7 @@ describe('ISE Dashboards:', () => {
     });
     it('should get system summary', async () => {
       const data = await ise.getSystemSummary();
-      expect(data).to.be.an('array');
+      expect(data).to.be.an('object');
     });
   });
 });

@@ -42,6 +42,6 @@ describe('ISE Chart Data:', () => {
   });
   it('should get application category data', async () => {
     const data = await ise.getApplicationCategoryChartData();
-    expect(data).to.be.an('object');
+    expect(data).to.be.an('array');
   });
 });
