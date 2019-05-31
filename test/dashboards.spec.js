@@ -1,7 +1,7 @@
 'use strict';
 require('./setup');
 
-if (!LIVE_TEST) require('./mocks/metrics.nock');
+if (!LIVE_TEST) require('./mocks/dashboards.nock');
 
 describe('ISE Dashboards:', () => {
   describe('System Alarms:', () => {
