@@ -4,5 +4,7 @@ const ise = new ISE(process.env.ISE_HOST, process.env.ISE_USER, process.env.ISE_
 
 ise
   .login()
-  .then(() => console.log('logged in!'))
-  .catch(error => console.dir(error));
+  .then(login => {
+    console.log('Logged in! ISE is running version', ise.iseVersion, ise.csrfToken)
+  })
+  .catch(error => console.log(error));
