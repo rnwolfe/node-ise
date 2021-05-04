@@ -8,16 +8,13 @@ describe('ISE Authentication:', () => {
   describe('Login:', () => {
     it('should login successfully', async () => {
       const login = await tempIse.login();
-      login.should.contain.keys(['sessionId', 'csrfToken']);
+      login.should.be.true;
     });
     it('should fail to login', async () => {
       const bad = new ISE(ise.host, 'badtest', 'badtest');
       bad
         .login()
-        .should.eventually.be.rejectedWith(
-          Error,
-          /Authentication failed. Bad username or password./
-        );
+        .should.eventually.be.rejectedWith(Error);
     });
   });
   describe('Logout:', () => {
