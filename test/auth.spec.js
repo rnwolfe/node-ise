@@ -1,5 +1,5 @@
-'use strict';
 require('./setup');
+// eslint-disable-next-line global-require
 if (!LIVE_TEST) require('./mocks/auth.nock');
 
 // Create a temporary ISE instance as to not interface with global testing instance.

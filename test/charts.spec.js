@@ -1,4 +1,3 @@
-'use strict';
 require('./setup');
 
 describe('ISE Chart Data:', () => {

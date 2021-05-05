@@ -1,4 +1,3 @@
-'use strict';
 require('./setup');
 const { expect } = require('chai');
 const fs = require('fs');
@@ -18,7 +17,7 @@ describe('Context Visibility: Endpoints:', () => {
           'ElapsedDays',
           'EndPointSource',
           'EndPointPolicy',
-          'OUI'
+          'OUI',
         ]);
     });
     it('should get endpoints (with pagination)', async () => {
@@ -35,8 +34,8 @@ describe('Context Visibility: Endpoints:', () => {
         .with.a.lengthOf.at.least(5);
       expect(endpoints[0])
         .to.be.an('object')
-        .and.include({ IdentityGroup: 'Blacklist' })
-      expect(endpoints[0]['MACAddress']).to.match(/00:00:00:00:00:0[1-5]/)
+        .and.include({ IdentityGroup: 'Blacklist' });
+      expect(endpoints[0].MACAddress).to.match(/00:00:00:00:00:0[1-5]/);
     });
     it('should get all endpoints (with EndPointPolicy filter)', async () => {
       const endpoints = await ise.getEndpoints({ EndPointPolicy: 'Workstation' });
@@ -45,9 +44,8 @@ describe('Context Visibility: Endpoints:', () => {
         .with.a.lengthOf.at.least(5);
       expect(endpoints[0])
         .to.be.an('object')
-        .and.include({ EndPointPolicy: 'Workstation' })
-      expect(endpoints[0]['MACAddress']).to.match(/00:00:00:00:00:2[1-5]/)
-
+        .and.include({ EndPointPolicy: 'Workstation' });
+      expect(endpoints[0].MACAddress).to.match(/00:00:00:00:00:2[1-5]/);
     });
     it("should get a single endpoint's details", async () => {
       const endpoint = await ise.getEndpoint('00:00:00:00:00:01');
@@ -58,9 +56,9 @@ describe('Context Visibility: Endpoints:', () => {
           'ElapsedDays',
           'EndPointSource',
           'EndPointPolicy',
-          'OUI'
+          'OUI',
         ])
-        .and.include({ MACAddress: '00:00:00:00:00:01' })
+        .and.include({ MACAddress: '00:00:00:00:00:01' });
     });
   });
   describe('Export endpoints to CSV', () => {
