@@ -1,4 +1,3 @@
-'use strict';
 require('./setup');
 
 // if (!LIVE_TEST) require('./mocks/radius.nock');
@@ -15,7 +14,7 @@ const POLICY_SET_KEYS = [
   'isProxy',
   'isDuplicated',
   'duplicationSourceId',
-  'default'
+  'default',
 ];
 
 describe('RADIUS Policy Sets:', () => {
@@ -81,7 +80,7 @@ describe('RADIUS Policy Sets:', () => {
         'serviceNames',
         'failovers',
         'identityStores',
-        'authzProfiles'
+        'authzProfiles',
       ]);
     });
   });

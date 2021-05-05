@@ -1,4 +1,3 @@
-'use strict';
 require('./setup');
 // if (!LIVE_TEST) require('./mocks/endpoints.nock');
 

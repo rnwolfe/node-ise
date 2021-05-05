@@ -1,4 +1,3 @@
-'use strict';
 require('./setup');
 
 if (!LIVE_TEST) require('./mocks/dashboards.nock');
@@ -18,7 +17,7 @@ const SYSTEM_ALARM_KEYS = [
   'repositoryName',
   'strAlarmTimeStamp',
   'updateTime',
-  'visitedNumber'
+  'visitedNumber',
 ];
 
 describe('ISE Dashboards:', () => {

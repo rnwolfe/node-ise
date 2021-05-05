@@ -1,4 +1,5 @@
-'use strict';
+/* eslint-disable mocha/no-top-level-hooks */
+/* eslint-disable mocha/no-hooks-for-single-case */
 const chai = require('chai');
 const chaiAsPromised = require('chai-as-promised');
 
@@ -6,7 +7,7 @@ chai.should();
 chai.use(chaiAsPromised);
 global.expect = require('chai').expect;
 
-global.ISE = require('../');
+global.ISE = require('..');
 global.PATHS = require('../lib/paths');
 
 if ((process.env.TEST_MODE || '').trim() === 'live') {
@@ -22,10 +23,6 @@ if ((process.env.TEST_MODE || '').trim() === 'live') {
 global.BASEURL = `https://${ise.host}/admin`;
 global.ROOT = '/';
 
-before('Login to ISE', async () => {
-  return await ise.login();
-});
+before('Login to ISE', async () => ise.login());
 
-after('Logout of ISE', async () => {
-  return await ise.logout();
-});
+after('Logout of ISE', async () => ise.logout());

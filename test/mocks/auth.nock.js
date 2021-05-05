@@ -1,22 +1,22 @@
 // Successful login
 nock(BASEURL)
-  .post(ROOT + PATHS.LOGIN, body => body.username === 'goodtest' && body.password === 'goodtest')
+  .post(ROOT + PATHS.LOGIN, (body) => body.username === 'goodtest' && body.password === 'goodtest')
   .reply(302, '', {
     'set-cookie': [
       'APPSESSIONID=AA11BB22CC33; Path=/admin; Secure; HttpOnly',
       'TOKEN=; Max-Age=0; Expires=Thu, 01-Jan-1970 00:00:10 GMT; Path=/; Secure; HttpOnly',
-      'redirectUrl=; Max-Age=0; Expires=Thu, 01-Jan-1970 00:00:10 GMT; Path=/; Secure; HttpOnly'
+      'redirectUrl=; Max-Age=0; Expires=Thu, 01-Jan-1970 00:00:10 GMT; Path=/; Secure; HttpOnly',
     ],
-    location: '/admin/'
+    location: '/admin/',
   })
   .persist(true);
 
 // Bad credentials
 nock(BASEURL)
-  .post(ROOT + PATHS.LOGIN, body => body.username !== 'goodtest' && body.password !== 'goodtest')
+  .post(ROOT + PATHS.LOGIN, (body) => body.username !== 'goodtest' && body.password !== 'goodtest')
   .reply(302, '', {
     'set-cookie': ['APPSESSIONID=BADSESSION; Path=/admin; Secure; HttpOnly'],
-    location: '/admin/login.jsp?mid=external_auth_msg'
+    location: '/admin/login.jsp?mid=external_auth_msg',
   });
 
 // CSRF for good login

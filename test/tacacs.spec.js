@@ -1,4 +1,3 @@
-'use strict';
 require('./setup');
 
 // if (!LIVE_TEST) require('./mocks/tacacs.nock');
@@ -15,7 +14,7 @@ const POLICY_SET_KEYS = [
   'isProxy',
   'isDuplicated',
   'duplicationSourceId',
-  'default'
+  'default',
 ];
 
 describe('TACACS Policy Sets:', () => {
@@ -54,7 +53,7 @@ describe('TACACS Policy Sets:', () => {
         'failovers',
         'identityStores',
         'shellProfiles',
-        'commandSets'
+        'commandSets',
       ]);
     });
   });

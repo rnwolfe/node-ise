@@ -25,7 +25,7 @@ const replyBody = [
       severity: 3,
       enabled: 0,
       description: null,
-      updateTime: null
+      updateTime: null,
     },
     visitedNumber: 842,
     message: null,
@@ -35,7 +35,7 @@ const replyBody = [
     lastOccur: '618301',
     strAlarmTimeStamp: 'May 30 2019 14:01:33.772 PM',
     reportInstanceId: null,
-    isLocal: null
+    isLocal: null,
   },
   {
     owner: null,
@@ -61,7 +61,7 @@ const replyBody = [
       severity: 1,
       enabled: 0,
       description: null,
-      updateTime: null
+      updateTime: null,
     },
     visitedNumber: 249,
     message: null,
@@ -71,8 +71,8 @@ const replyBody = [
     lastOccur: '38478301',
     strAlarmTimeStamp: 'May 30 2019 03:30:33.772 AM',
     reportInstanceId: null,
-    isLocal: null
-  }
+    isLocal: null,
+  },
 ];
 
 // Return system alarms
