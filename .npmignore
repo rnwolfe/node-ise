@@ -3,3 +3,6 @@ test/
 .gitignore
 *.curl
 .vscode/
+coverage/
+.nyc_output/
+node_modules/
