@@ -12,9 +12,7 @@ describe('ISE Authentication:', () => {
     });
     it('should fail to login', async () => {
       const bad = new ISE(ise.host, 'badtest', 'badtest');
-      bad
-        .login()
-        .should.eventually.be.rejectedWith(Error);
+      bad.login().should.eventually.be.rejectedWith(Error);
     });
   });
   describe('Logout:', () => {

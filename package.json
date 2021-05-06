@@ -9,11 +9,11 @@
     "coverage": "nyc ./node_modules/mocha/bin/mocha",
     "coverage:live": "TEST_MODE=live nyc --reporter=lcov --reporter=text ./node_modules/mocha/bin/mocha",
     "lint:lib": "eslint ./lib",
-    "lint:lib:fix": "eslint ./lib",
+    "lint:lib:fix": "eslint ./lib --fix",
     "lint:tests": "eslint ./test",
-    "lint:tests:fix": "eslint ./test",
+    "lint:tests:fix": "eslint ./test --fix",
     "lint:examples": "eslint ./examples",
-    "lint:examples:fix": "eslint ./examples",
+    "lint:examples:fix": "eslint ./examples --fix",
     "lint": "npm run lint:lib && npm run lint:tests && npm run lint:examples",
     "lint:fix": "npm run lint:lib:fix && npm run lint:tests:fix && npm run lint:examples:fix"
   },
@@ -42,10 +42,13 @@
     "chai-as-promised": "^7.1.1",
     "eslint": "^7.25.0",
     "eslint-config-airbnb-base": "^14.2.1",
+    "eslint-config-prettier": "^8.3.0",
     "eslint-plugin-import": "^2.22.1",
     "eslint-plugin-mocha": "^8.1.0",
+    "eslint-plugin-prettier": "^3.4.0",
     "mocha": "^6.1.4",
     "nock": "^10.0.6",
-    "nyc": "^14.1.1"
+    "nyc": "^14.1.1",
+    "prettier": "^2.2.1"
   }
 }

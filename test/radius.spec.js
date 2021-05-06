@@ -14,7 +14,7 @@ const POLICY_SET_KEYS = [
   'isProxy',
   'isDuplicated',
   'duplicationSourceId',
-  'default',
+  'default'
 ];
 
 describe('RADIUS Policy Sets:', () => {
@@ -63,7 +63,10 @@ describe('RADIUS Policy Sets:', () => {
     it('should not be found', async () => {
       ise
         .getRadiusPolicySetByName('PolicySet12345')
-        .should.eventually.be.rejectedWith(Error, /Provided RADIUS policy set does not exist./);
+        .should.eventually.be.rejectedWith(
+          Error,
+          /Provided RADIUS policy set does not exist./
+        );
     });
   });
   describe("Get a policy set's details:", () => {
@@ -80,7 +83,7 @@ describe('RADIUS Policy Sets:', () => {
         'serviceNames',
         'failovers',
         'identityStores',
-        'authzProfiles',
+        'authzProfiles'
       ]);
     });
   });

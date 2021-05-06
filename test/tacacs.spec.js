@@ -14,7 +14,7 @@ const POLICY_SET_KEYS = [
   'isProxy',
   'isDuplicated',
   'duplicationSourceId',
-  'default',
+  'default'
 ];
 
 describe('TACACS Policy Sets:', () => {
@@ -35,7 +35,10 @@ describe('TACACS Policy Sets:', () => {
     it('should not be found', async () => {
       ise
         .getTacacsPolicySetByName('PolicySet12345')
-        .should.eventually.be.rejectedWith(Error, /Provided TACACS policy set does not exist./);
+        .should.eventually.be.rejectedWith(
+          Error,
+          /Provided TACACS policy set does not exist./
+        );
     });
   });
   describe("Get a policy set's details:", () => {
@@ -53,7 +56,7 @@ describe('TACACS Policy Sets:', () => {
         'failovers',
         'identityStores',
         'shellProfiles',
-        'commandSets',
+        'commandSets'
       ]);
     });
   });

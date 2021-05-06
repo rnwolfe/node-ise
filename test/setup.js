@@ -12,7 +12,11 @@ global.PATHS = require('../lib/paths');
 
 if ((process.env.TEST_MODE || '').trim() === 'live') {
   global.LIVE_TEST = true;
-  global.ise = new ISE(process.env.ISE_HOST, process.env.ISE_USER, process.env.ISE_PASS);
+  global.ise = new ISE(
+    process.env.ISE_HOST,
+    process.env.ISE_USER,
+    process.env.ISE_PASS
+  );
   console.log(`Tests running against a live ISE environment (${ise.host})`);
 } else {
   global.LIVE_TEST = false;

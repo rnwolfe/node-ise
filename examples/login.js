@@ -1,10 +1,12 @@
-const ISE = require('..');
-
-const ise = new ISE(process.env.ISE_HOST, process.env.ISE_USER, process.env.ISE_PASS);
+const ise = require('./setup');
 
 ise
   .login()
   .then(() => {
-    console.log('Logged in! ISE is running version', ise.iseVersion, ise.csrfToken);
+    console.log(
+      'Logged in! ISE is running version',
+      ise.iseVersion,
+      ise.csrfToken
+    );
   })
   .catch((error) => console.log(error));

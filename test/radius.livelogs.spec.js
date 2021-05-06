@@ -14,7 +14,7 @@ const COUNTER_KEYS = [
   'percentEapTimeoutCount',
   'percentRadiusDropCount',
   'percentTotalRAuthCount',
-  'percentRetryCount',
+  'percentRetryCount'
 ];
 // Need a way to push auth entries to ISE to ensure these tests are consistent between instances.
 // Difficult to expect certain data when testing environments are not controlled.
@@ -38,15 +38,14 @@ describe('RADIUS Live Logs:', () => {
         expect(log)
           .to.be.an('object')
           .to.have.include.keys(LOG_KEYS)
-          .and.include({ status: 'false' }));
+          .and.include({ status: 'false' })
+      );
     });
   });
   describe('Get counters:', () => {
     it('should get live log counters', async () => {
       const counters = await ise.getRadiusLiveLogCounters();
-      expect(counters)
-        .to.be.an('object')
-        .and.to.include.keys(COUNTER_KEYS);
+      expect(counters).to.be.an('object').and.to.include.keys(COUNTER_KEYS);
     });
   });
 });

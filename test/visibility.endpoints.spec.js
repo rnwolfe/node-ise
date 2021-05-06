@@ -7,9 +7,7 @@ describe('Context Visibility: Endpoints:', () => {
   describe('Get endpoints:', () => {
     it('should get all endpoints (no pagination)', async () => {
       const endpoints = await ise.getEndpoints();
-      expect(endpoints)
-        .to.be.an('array')
-        .with.lengthOf.at.least(20);
+      expect(endpoints).to.be.an('array').with.lengthOf.at.least(20);
       expect(endpoints[0])
         .to.be.an('object')
         .that.includes.keys([
@@ -17,31 +15,27 @@ describe('Context Visibility: Endpoints:', () => {
           'ElapsedDays',
           'EndPointSource',
           'EndPointPolicy',
-          'OUI',
+          'OUI'
         ]);
     });
     it('should get endpoints (with pagination)', async () => {
       const endpoints = await ise.getEndpoints({}, { pageSize: 1 });
-      expect(endpoints)
-        .to.be.an('array')
-        .with.a.lengthOf.at.least(1);
+      expect(endpoints).to.be.an('array').with.a.lengthOf.at.least(1);
     });
     // The endpoint 11:00:00:00:00:01 needs to be manually created in the Identity Group Blacklist.
     it('should get all endpoints (with IdentityGroup filter)', async () => {
       const endpoints = await ise.getEndpoints({ IdentityGroup: 'Blacklist' });
-      expect(endpoints)
-        .to.be.an('array')
-        .with.a.lengthOf.at.least(5);
+      expect(endpoints).to.be.an('array').with.a.lengthOf.at.least(5);
       expect(endpoints[0])
         .to.be.an('object')
         .and.include({ IdentityGroup: 'Blacklist' });
       expect(endpoints[0].MACAddress).to.match(/00:00:00:00:00:0[1-5]/);
     });
     it('should get all endpoints (with EndPointPolicy filter)', async () => {
-      const endpoints = await ise.getEndpoints({ EndPointPolicy: 'Workstation' });
-      expect(endpoints)
-        .to.be.an('array')
-        .with.a.lengthOf.at.least(5);
+      const endpoints = await ise.getEndpoints({
+        EndPointPolicy: 'Workstation'
+      });
+      expect(endpoints).to.be.an('array').with.a.lengthOf.at.least(5);
       expect(endpoints[0])
         .to.be.an('object')
         .and.include({ EndPointPolicy: 'Workstation' });
@@ -56,7 +50,7 @@ describe('Context Visibility: Endpoints:', () => {
           'ElapsedDays',
           'EndPointSource',
           'EndPointPolicy',
-          'OUI',
+          'OUI'
         ])
         .and.include({ MACAddress: '00:00:00:00:00:01' });
     });

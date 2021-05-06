@@ -17,7 +17,7 @@ const SYSTEM_ALARM_KEYS = [
   'repositoryName',
   'strAlarmTimeStamp',
   'updateTime',
-  'visitedNumber',
+  'visitedNumber'
 ];
 
 describe('ISE Dashboards:', () => {
