@@ -5,7 +5,11 @@
   "main": "index.js",
   "scripts": {
     "test": "./node_modules/mocha/bin/mocha",
-    "test:live": "TEST_MODE=live ./node_modules/mocha/bin/mocha",
+    "test:24": "ISE_VER=2.4 ./node_modules/mocha/bin/mocha",
+    "test:26": "ISE_VER=2.6 ./node_modules/mocha/bin/mocha",
+    "test:27": "ISE_VER=2.7 ./node_modules/mocha/bin/mocha",
+    "test:30": "ISE_VER=3.0 ./node_modules/mocha/bin/mocha",
+    "test:all": "npm run test:24 && npm run test:26 && npm run test:27 && npm run test:30",
     "coverage": "nyc ./node_modules/mocha/bin/mocha",
     "coverage:live": "TEST_MODE=live nyc --reporter=lcov --reporter=text ./node_modules/mocha/bin/mocha",
     "lint:lib": "eslint ./lib",
@@ -40,6 +44,7 @@
   "devDependencies": {
     "chai": "^4.2.0",
     "chai-as-promised": "^7.1.1",
+    "dotenv": "^9.0.0",
     "eslint": "^7.25.0",
     "eslint-config-airbnb-base": "^14.2.1",
     "eslint-config-prettier": "^8.3.0",
