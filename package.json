@@ -7,15 +7,21 @@
     "test": "./node_modules/mocha/bin/mocha",
     "test:live": "TEST_MODE=live ./node_modules/mocha/bin/mocha",
     "coverage": "nyc ./node_modules/mocha/bin/mocha",
-    "coverage:live": "TEST_MODE=live nyc --reporter=lcov --reporter=text ./node_modules/mocha/bin/mocha"
+    "coverage:live": "TEST_MODE=live nyc --reporter=lcov --reporter=text ./node_modules/mocha/bin/mocha",
+    "lint:lib": "eslint ./lib",
+    "lint:lib:fix": "eslint ./lib",
+    "lint:tests": "eslint ./test",
+    "lint:tests:fix": "eslint ./test",
+    "lint:examples": "eslint ./examples",
+    "lint:examples:fix": "eslint ./examples",
+    "lint": "npm run lint:lib && npm run lint:tests && npm run lint:examples",
+    "lint:fix": "npm run lint:lib:fix && npm run lint:tests:fix && npm run lint:examples:fix"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/rnwolfe/node-ise.git"
   },
   "keywords": [
-    "cisco",
-    "ise",
     "cisco",
     "ise"
   ],
