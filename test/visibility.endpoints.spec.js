@@ -58,11 +58,11 @@ describe('Context Visibility: Endpoints:', () => {
   describe('Export endpoints to CSV', () => {
     it('should export endpoints to a csv file', async () => {
       const file = await ise.endpointsToCsv();
+      after('Delete CSV file', async () => fs.unlinkSync(file));
       expect(fs.existsSync(file)).to.be.true;
       expect(fs.readFileSync(file).byteLength)
         .to.be.a('number')
         .that.is.at.least(200);
-      fs.unlinkSync(file);
     });
   });
 });
