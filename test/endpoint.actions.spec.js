@@ -27,18 +27,20 @@ describe('Endpoint actions:', () => {
     //     .and.include({ MACAddress: endpointMac })
     //     .and.include({ EndPointPolicy: endpointPolicy });
     // });
-    // it('should create an endpoint with a static identity group', async () => {
-    //   const endpointMac = '10:00:00:00:00:03';
-    //   const endpointGroup = 'Blacklist';
-    //   const newEndpoint = await ise.createEndpoint(endpointMac, {
-    //     identityGroup: endpointGroup
-    //   });
-    //   const endpoint = await ise.getEndpoint(endpointMac);
-    //   expect(endpoint)
-    //     .to.be.an('object')
-    //     .and.include({ MACAddress: endpointMac })
-    //     .and.include({ IdentityGroup: endpointGroup });
-    // });
+    it('should create an endpoint with a static identity group', async () => {
+      const endpointMac = '10:00:00:00:00:03';
+      const endpointGroup = 'Blacklist';
+      const newEndpoint = await ise.createEndpoint(endpointMac, {
+        identityGroup: endpointGroup
+      });
+      const endpoint = await ise.getEndpoint(endpointMac);
+      expect(endpoint)
+        .to.be.an('object')
+        .and.include({ MACAddress: endpointMac })
+        .and.include({ IdentityGroup: endpointGroup });
+      // Remove the created endpoint
+      await ise.deleteEndpoint(endpointMac);
+    });
   });
   describe('Delete endpoint:', () => {
     it('should delete an endpoint', async () => {
