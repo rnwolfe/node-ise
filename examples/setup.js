@@ -1,3 +1,8 @@
+/* eslint-disable global-require */
+/* eslint-disable prefer-template */
+require('dotenv').config({
+  path: require('path').resolve(__dirname) + '/.env'
+});
 const ISE = require('..');
 
 const ise = new ISE(

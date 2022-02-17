@@ -1,4 +1,4 @@
-const ise = require('./setup');
+const ise = require('../setup');
 
 ise
   .login()
