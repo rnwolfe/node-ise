@@ -19,13 +19,14 @@ describe('Context Visibility: Endpoints:', () => {
         ]);
     });
     it('should get endpoints (with pagination)', async () => {
+      // This doesn't seem to limit page size to 1
       const endpoints = await ise.getEndpoints({}, { pageSize: 1 });
-      expect(endpoints).to.be.an('array').with.a.lengthOf.at.least(1);
+      expect(endpoints).to.be.an('array').with.a.lengthOf(1);
     });
     // The endpoint 11:00:00:00:00:01 needs to be manually created in the Identity Group Blacklist.
     it('should get all endpoints (with IdentityGroup filter)', async () => {
       const endpoints = await ise.getEndpoints({ IdentityGroup: 'Blacklist' });
-      expect(endpoints).to.be.an('array').with.a.lengthOf.at.least(5);
+      expect(endpoints).to.be.an('array').with.a.lengthOf(5);
       expect(endpoints[0])
         .to.be.an('object')
         .and.include({ IdentityGroup: 'Blacklist' });
@@ -35,7 +36,7 @@ describe('Context Visibility: Endpoints:', () => {
       const endpoints = await ise.getEndpoints({
         EndPointPolicy: 'Workstation'
       });
-      expect(endpoints).to.be.an('array').with.a.lengthOf.at.least(5);
+      expect(endpoints).to.be.an('array').with.a.lengthOf(5);
       expect(endpoints[0])
         .to.be.an('object')
         .and.include({ EndPointPolicy: 'Workstation' });

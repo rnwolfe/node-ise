@@ -1,6 +1,5 @@
 require('./setup');
 const { expect } = require('chai');
-const fs = require('fs');
 // if (!LIVE_TEST) require('./mocks/endpoints.nock');
 
 describe('Endpoint actions:', () => {
@@ -8,7 +7,7 @@ describe('Endpoint actions:', () => {
     // Each test will create an endpoint, and it will be cleaned up
     // after each test for re-use on the next.
     const endpointMac = '10:00:00:00:00:01';
-    afterEach(async () => await ise.deleteEndpoint(endpointMac));
+    afterEach(async () => ise.deleteEndpoint(endpointMac));
 
     it('should create an endpoint', async () => {
       const newEndpoint = await ise.createEndpoint(endpointMac);
@@ -20,7 +19,6 @@ describe('Endpoint actions:', () => {
     });
     it('should create an endpoint with a static endpoint profile', async () => {
       const endpointPolicy = 'Cisco-Device';
-      // Remove the created endpoint after test
       const newEndpoint = await ise.createEndpoint(endpointMac, {
         policyName: endpointPolicy
       });
