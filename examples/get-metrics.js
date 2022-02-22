@@ -9,6 +9,14 @@ ise
       ise.getAnomalousEndpoints(),
       ise.getByodEndpoints(),
       ise.getAuthenticatedGuest()
-    ])
+    ]).then((results) => {
+      return {
+        activeEndpoints: results[0],
+        rejectedEndpoints: results[1],
+        anomalousEndpoints: results[2],
+        byodEndpoints: results[3],
+        authenticatedGuest: results[4]
+      };
+    })
   )
-  .then((values) => console.dir(values));
+  .then((values) => console.table(values));

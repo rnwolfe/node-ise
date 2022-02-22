@@ -9,6 +9,7 @@
     "test:26": "ISE_VER=2.6 ./node_modules/mocha/bin/mocha",
     "test:27": "ISE_VER=2.7 ./node_modules/mocha/bin/mocha",
     "test:30": "ISE_VER=3.0 ./node_modules/mocha/bin/mocha",
+    "test:31": "ISE_VER=3.1 ./node_modules/mocha/bin/mocha",
     "test:all": "npm run test:24 && npm run test:26 && npm run test:27 && npm run test:30",
     "coverage": "nyc ./node_modules/mocha/bin/mocha",
     "coverage:live": "TEST_MODE=live nyc --reporter=lcov --reporter=text ./node_modules/mocha/bin/mocha",
