@@ -6,7 +6,8 @@ ise
     Promise.all([
       ise.getTopCompromisedEndpoints(),
       ise.getTopThreats(),
-      ise.getCompromisedEndpointsOverTime()
+      ise.getCompromisedEndpointsOverTime(),
+      ise.getTotalVulnerableEndpoints()
     ])
   )
-  .then((values) => console.dir(values));
+  .then((values) => console.dir(values, { depth: 4 }));
