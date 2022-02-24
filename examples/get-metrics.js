@@ -8,7 +8,7 @@ ise
       ise.getRejectedEndpoints(),
       ise.getAnomalousEndpoints(),
       ise.getByodEndpoints(),
-      ise.getAuthenticatedGuest(),
+      ise.getAuthenticatedGuests(),
       ise.getTotalEndpoints()
     ]).then((results) => {
       return {
