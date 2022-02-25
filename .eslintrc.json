@@ -1,37 +1,16 @@
 {
-    "env": {
-        "browser": true,
-        "commonjs": true,
-        "es2021": true,
-        "node": true
-    },
+    "$schema": "https://json.schemastore.org/eslintrc.json",
     "extends": [
-        "airbnb-base",
-        "plugin:prettier/recommended"
+      "eslint:recommended",
+      "prettier"
     ],
-    "parserOptions": {
-        "ecmaVersion": 12
+    "env": {
+      "node": true,
+      "browser": true,
+      "es2020": true
     },
     "rules": {
-        "array-callback-return": 0,
-        // We handle error throwing using a non-returned function, an extra return false would be extraneous
-        "consistent-return": 0,
-        // We use _ to indicate "internal use" functions.
-        "no-underscore-dangle": 0,
-        "radix": 0,
-        "max-len": [
-            "warn",
-            {
-                "code": 80,
-                "tabWidth": 2,
-                "comments": 80,
-                "ignoreComments": true,
-                "ignoreTrailingComments": true,
-                "ignoreUrls": true,
-                "ignoreStrings": true,
-                "ignoreTemplateLiterals": true,
-                "ignoreRegExpLiterals": true
-            }
-        ]
+      // This is useful to ignore abundant warning about the next being unused in Express.js routes
+      "no-unused-vars": ["error", { "argsIgnorePattern": "next" }]
     }
-}
+  }
