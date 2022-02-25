@@ -10,7 +10,7 @@ describe('TACACS Live Logs:', () => {
       // Removing specifics lengths until testing w/ a TACACS client can be automated.
       // expect(logs).to.have.a.lengthOf(2);
       // These pass if given array is empty.
-      logs.every((log) =>
+      logs.every(log =>
         expect(log).to.be.an('object').to.have.include.keys(LOG_KEYS)
       );
     });
@@ -21,7 +21,7 @@ describe('TACACS Live Logs:', () => {
       expect(logs).to.be.an('array');
       // Removing specifics lengths until testing w/ a TACACS client can be automated.
       // expect(logs).to.have.a.lengthOf.at.least(5);
-      logs.every((log) =>
+      logs.every(log =>
         // These pass if given array is empty.
         expect(log)
           .to.be.an('object')

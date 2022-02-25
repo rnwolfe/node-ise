@@ -10,4 +10,4 @@ ise
       ise.getTotalVulnerableEndpoints()
     ])
   )
-  .then((values) => console.dir(values, { depth: 4 }));
+  .then(values => console.dir(values, { depth: 4 }));

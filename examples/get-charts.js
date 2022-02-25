@@ -15,4 +15,4 @@ ise
       ise.getDeviceTypeChartData()
     ])
   )
-  .then((values) => console.dir(values));
+  .then(values => console.dir(values));

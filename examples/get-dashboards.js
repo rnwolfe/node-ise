@@ -3,7 +3,7 @@ const ise = require('./setup');
 ise
   .login()
   .then(() => Promise.all([ise.getSystemAlarms(), ise.getSystemSummary()]))
-  .then((values) => {
+  .then(values => {
     const [alarms, summary] = values;
     console.log('Alarms');
     console.table(alarms);

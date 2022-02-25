@@ -24,7 +24,7 @@ describe('Endpoint Profiling Policies:', () => {
       expect(profiles.totalItems).to.be.at.least(500);
       expect(profiles).to.be.an('object');
       expect(profiles.items).to.be.an('array').with.lengthOf.at.least(25);
-      profiles.items.forEach((profile) =>
+      profiles.items.forEach(profile =>
         expect(profile)
           .to.be.an('object')
           .that.includes.keys(PROFILER_POLICY_KEYS)
@@ -49,7 +49,7 @@ describe('Endpoint Profiling Policies:', () => {
     it('should get profiling policies for dropdown list', async () => {
       const profiles = await ise.getEndpointProfilingPoliciesList();
       expect(profiles).to.be.an('array').with.lengthOf.at.least(500);
-      profiles.forEach((profile) =>
+      profiles.forEach(profile =>
         expect(profile)
           .to.be.an('object')
           .that.includes.keys(PROFILER_DROPDOWN_KEYS)

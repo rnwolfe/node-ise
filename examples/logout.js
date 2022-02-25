@@ -9,4 +9,5 @@ ise
       ise.csrfToken
     );
   })
+  .then(() => ise.logout())
   .catch(error => console.log(error));

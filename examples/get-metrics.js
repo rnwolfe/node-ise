@@ -10,7 +10,7 @@ ise
       ise.getByodEndpoints(),
       ise.getAuthenticatedGuests(),
       ise.getTotalEndpoints()
-    ]).then((results) => {
+    ]).then(results => {
       return {
         activeEndpoints: results[0],
         rejectedEndpoints: results[1],
@@ -21,4 +21,4 @@ ise
       };
     })
   )
-  .then((values) => console.table(values));
+  .then(values => console.table(values));

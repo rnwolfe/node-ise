@@ -2,7 +2,7 @@
 nock(BASEURL)
   .post(
     ROOT + PATHS.LOGIN,
-    (body) => body.username === 'goodtest' && body.password === 'goodtest'
+    body => body.username === 'goodtest' && body.password === 'goodtest'
   )
   .reply(302, '', {
     'set-cookie': [
@@ -18,7 +18,7 @@ nock(BASEURL)
 nock(BASEURL)
   .post(
     ROOT + PATHS.LOGIN,
-    (body) => body.username !== 'goodtest' && body.password !== 'goodtest'
+    body => body.username !== 'goodtest' && body.password !== 'goodtest'
   )
   .reply(302, '', {
     'set-cookie': ['APPSESSIONID=BADSESSION; Path=/admin; Secure; HttpOnly'],

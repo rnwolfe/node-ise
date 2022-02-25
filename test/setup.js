@@ -42,7 +42,7 @@ if ((process.env.TEST_MODE || '').trim() === 'mock') {
   if (ISE_HOST === '' || ISE_USER === '' || ISE_PASS === '') {
     throw new ReferenceError(
       'ISE_HOST, ISE_USER, and ISE_PASS environment variables are required for tests. \n\n' +
-      'If providing a specific version, ISE_VER is required with ISE<ISE_VER>_HOST, ISE<ISE_VER>_USER, ISE<ISE_VER>_PASS'
+        'If providing a specific version, ISE_VER is required with ISE<ISE_VER>_HOST, ISE<ISE_VER>_USER, ISE<ISE_VER>_PASS'
     );
   }
   global.LIVE_TEST = true;
@@ -90,19 +90,19 @@ before(async () => {
   });
   it('create test endpoints', async () => {
     await ise.login();
-    blacklistMacs.forEach(async (mac) => {
+    blacklistMacs.forEach(async mac => {
       await ise.createEndpoint(mac, blacklistOptions);
-      await setTimeout(() => { }, 1000);
+      await setTimeout(() => {}, 1000);
     });
-    workstationMacs.forEach(async (mac) => {
+    workstationMacs.forEach(async mac => {
       await ise.createEndpoint(mac, workstationOptions);
-      await setTimeout(() => { }, 1000);
+      await setTimeout(() => {}, 1000);
     });
-    extraMacs.forEach(async (mac) => {
+    extraMacs.forEach(async mac => {
       await ise.createEndpoint(mac);
-      await setTimeout(() => { }, 1000);
+      await setTimeout(() => {}, 1000);
     });
-    await setTimeout(() => { }, 1000);
+    await setTimeout(() => {}, 1000);
   });
 });
 
@@ -112,9 +112,9 @@ after(async () => {
   it('delete test endpoints', async () => {
     console.log('deleting all endpoints');
     allMacs = [...blacklistMacs, ...workstationMacs, ...extraMacs];
-    allMacs.forEach(async (mac) => {
+    allMacs.forEach(async mac => {
       await ise.deleteEndpoint(mac);
-      await setTimeout(() => { }, 1000);
+      await setTimeout(() => {}, 1000);
     });
   });
   it('logout of ise', async () => {

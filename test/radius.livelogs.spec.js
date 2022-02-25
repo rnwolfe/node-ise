@@ -26,14 +26,14 @@ describe('RADIUS Live Logs:', () => {
       // Removing specifics lengths until testing w/ a RADIUS client can be automated.
       // expect(logs).to.have.a.lengthOf(20);
       // These pass if given array is empty.
-      logs.every((log) => expect(log).to.have.include.keys(LOG_KEYS));
+      logs.every(log => expect(log).to.have.include.keys(LOG_KEYS));
     });
     it('should get most recent logs (with filter) with expected attributes', async () => {
       const logs = await ise.getRadiusLiveLogs({ status: 'false' });
       expect(logs).to.be.an('array');
       // Removing specifics lengths until testing w/ a RADIUS client can be automated.
       // expect(logs).to.have.a.lengthOf.at.least(5);
-      logs.every((log) =>
+      logs.every(log =>
         // This passes if the given array is empty.
         expect(log)
           .to.be.an('object')

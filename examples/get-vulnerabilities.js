@@ -9,4 +9,4 @@ ise
       ise.getVulnerableEndpointsOverTime('6months')
     ])
   )
-  .then((values) => console.dir(values));
+  .then(values => console.dir(values));

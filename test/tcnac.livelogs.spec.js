@@ -9,7 +9,7 @@ describe('TC-NAC Live Logs:', () => {
       const logs = await ise.getTcNacLiveLogs();
       expect(logs).to.be.an('array');
       expect(logs).to.have.a.lengthOf.at.least(0);
-      logs.every((log) => expect(log).to.have.include.keys(LOG_KEYS));
+      logs.every(log => expect(log).to.have.include.keys(LOG_KEYS));
     });
     it('should get most recent logs (with filter) with expected attributes', async () => {
       const logs = await ise.getTcNacLiveLogs({
@@ -17,7 +17,7 @@ describe('TC-NAC Live Logs:', () => {
       });
       expect(logs).to.be.an('array');
       expect(logs).to.have.a.lengthOf.at.least(0);
-      logs.every((log) =>
+      logs.every(log =>
         expect(log)
           .to.be.an('object')
           .to.have.include.keys(LOG_KEYS)
